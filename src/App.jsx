@@ -1,10 +1,18 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./containers/Login";
+import Body from "./containers/Body";
+import Profile from "./containers/Profile";
+
 function App() {
   return (
-    <>
-      <h1>Hello world</h1>
-      <p>Checking</p>
-      <button className="btn">Button</button>
-    </>
+    <BrowserRouter basename="/">
+      <Routes>
+        <Route path="/" element={<Body />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
