@@ -1,16 +1,15 @@
 function UserCard({ user }) {
-  console.log("card", user);
   const { name, emailId, about } = user;
 
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
       <figure>
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMCm1-BoxgbtmNzHpZW1vNRQ1AHCg_UV_uBdtFMuCYng&s=10"
+          alt="Photo"
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body bg-base-300">
         <h2 className="card-title">
           {name} <span className="text-sm">({emailId})</span>
         </h2>

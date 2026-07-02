@@ -25,7 +25,13 @@ function Login() {
           withCredentials: true,
         }
       );
-      dispatch(addUser(user?.data));
+      dispatch(
+        addUser({
+          name: user?.data?.name,
+          about: user?.data?.about,
+          gender: user?.data?.gender,
+        })
+      );
       navigate("/");
     } catch (error) {
       setError(error?.response?.data || "Something went wrong");
