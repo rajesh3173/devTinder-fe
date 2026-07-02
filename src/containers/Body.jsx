@@ -25,11 +25,7 @@ function Body() {
   };
 
   useEffect(() => {
-    console.log("userData", userData);
-
     if (!userData) {
-      console.log("if");
-
       fetchUser();
     }
   }, []);
