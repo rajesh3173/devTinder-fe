@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 import { removeuser } from "../store/userSlice";
+import notificationBell from "../images/notificationBell.svg";
 
 function Navbar() {
   const user = useSelector((store) => store.user);
@@ -46,6 +47,9 @@ function Navbar() {
       </div>
       {user && (
         <div className="flex items-center">
+          <Link className="w-5 mx-3" to={"/notifications"}>
+            <img src={notificationBell} alt="notification" />
+          </Link>
           <p>Welcome, {user?.name}</p>
           <div className="dropdown dropdown-end mx-5">
             <div

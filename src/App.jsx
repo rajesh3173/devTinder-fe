@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import appStore from "./store/appStore";
 import Feed from "./containers/Feed";
 import Chat from "./containers/Chat";
+import Notifications from "./containers/Notifications";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Feed />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/notifications" element={<Notifications />} />
             <Route path="/chat/:toUserId" element={<Chat />} />
           </Route>
         </Routes>
