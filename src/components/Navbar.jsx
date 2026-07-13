@@ -19,7 +19,21 @@ function Navbar() {
       dispatch(removeuser());
       navigate("/login");
     } catch (error) {
-      console.log(error);
+      console.error(error);
+    }
+  };
+
+  const getToUserIdName = (user) => {
+    if (user?._id == "6a3d1c8fabf1bd25de4b217a") {
+      return {
+        id: "6a3e7c371f931b0637cfb473",
+        name: "Rohit",
+      };
+    } else {
+      return {
+        id: "6a3d1c8fabf1bd25de4b217a",
+        name: "Kohli",
+      };
     }
   };
 
@@ -53,6 +67,14 @@ function Navbar() {
               <li>
                 <Link to={"/profile"} className="justify-between">
                   Profile
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={`/chat/${getToUserIdName(user).id}`}
+                  className="justify-between"
+                >
+                  Chat with {getToUserIdName(user).name}
                 </Link>
               </li>
               <li>
